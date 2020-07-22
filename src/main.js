@@ -8,6 +8,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css"
 import "bootstrap/dist/js/bootstrap"
 import Home from './components/Home.vue'
 import SingIn from './components/SingIn.vue'
+import Profile from './components/Profile.vue'
+import Producto from './components/Productos.vue'
 
 Vue.config.productionTip = false
 
@@ -16,7 +18,8 @@ const routes=[
   {path:'/Home',component:Home},
   {path:'/',component:Home},
   {path:'/Singin',component:SingIn},
-
+  {path:'/Profile',component:Profile},
+  {path:'/Productos',component:Producto},
 ]
 
 const router=new Router({

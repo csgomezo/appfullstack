@@ -21,14 +21,11 @@
           <li class="nav-item">
             <router-link to="/Home" class="nav-link">Home</router-link>
           </li>
-          <li v-if="auth=='loggedin'" class="nav-item">
-            <router-link to="/Usuarios" class="nav-link">Usuarios</router-link>
-          </li>
           <li class="nav-item">
             <router-link to="/Productos" class="nav-link">Productos</router-link>
           </li>
           <li v-if="auth=='loggedin'" class="nav-item">
-            <router-link to="/" class="nav-link">Perfil</router-link>
+            <router-link to="/Profile" class="nav-link">Perfil</router-link>
           </li>
         </ul>
         <ul class="nav justify-content-end">
