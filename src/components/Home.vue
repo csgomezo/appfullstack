@@ -1,9 +1,67 @@
 <template>
   <div>
-    <Slider texto="Bienvenido a Valencia App"></Slider>
+    <Slider
+      texto="Bienvenido a Mushapalatto"
+      alt="logo"
+      direccion="../assets/img/mushapalatto.jpg"
+    ></Slider>
     <div class="container-fluid">
       <div class="row">
-        <img src="../assets/img/banner-home.jpg" alt="banner-home" class="banner-img" />
+        <!--<img
+          src="../assets/img/banner-home.jpg"
+          alt="banner-home"
+          class="banner-img"
+        />-->
+      </div>
+      <div class="row">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="../assets/img/banner-home/banner-home-1.jpg" alt="First slide" />
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="../assets/img/banner-home/banner-home-2.jpg" alt="Second slide" />
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="../assets/img/banner-home/banner-home-3.jpg" alt="Third slide" />
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="../assets/img/banner-home/banner-home-4.jpg" alt="Forth slide" />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       </div>
       <div class="row new-section">
         <div class="col"></div>
@@ -20,9 +78,10 @@
           </div>
           <div class="row text-center text-row">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Ut tenetur porro placeat id ullam voluptatibus, corporis ea! Facilis,
-              corrupti est. Blanditiis veritatis, voluptate odit nobis dolore ut facere facilis cum!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+              tenetur porro placeat id ullam voluptatibus, corporis ea! Facilis,
+              corrupti est. Blanditiis veritatis, voluptate odit nobis dolore ut
+              facere facilis cum!
             </p>
           </div>
         </div>
@@ -31,55 +90,19 @@
         </div>
       </div>
 
-      <div class="row new-section">
-        <div class="col"></div>
-        <div class="col-5">
-          <h1>Nuestras caracteristicas</h1>
-        </div>
-        <div class="col"></div>
-      </div>
-
-      <div class="row new-section">
-        <div class="col"></div>
-        <div class="col-2 card-product">
-          <h3>Las mejores calificaciones</h3>
-          <br />
-          <div class="card-icon">
-            <i class="fas fa-star"></i>
-          </div>
-        </div>
-        <div class="col-2 card-product">
-          <h3>Totalmete seguro en tus compras</h3>
-          <div class="card-icon">
-            <i class="fa fa-shield-alt"></i>
-          </div>
-        </div>
-        <div class="col-2 card-product">
-          <h3>Siempre con clientes satisfechos</h3>
-          <div class="card-icon">
-            <i class="fa fa-smile-beam"></i>
-          </div>
-        </div>
-        <div class="col"></div>
-      </div>
     </div>
-    <!--<div class="row" style="height: 400px;">
-    </div>-->
+    
   </div>
 </template>
 
 <script>
 import Slider from "./Slider";
 
-
-
-
 export default {
   name: "Home",
   components: {
-    Slider
+    Slider,
   },
-  
 };
 </script>
 
@@ -95,7 +118,7 @@ h1 {
   font-size: 2.1rem;
   margin-top: 40px;
   padding: 9px 1px;
-  border-bottom: 2px solid #aeafaf;
+  border-bottom: 2px solid #fbd786;
 }
 .new-section {
   margin-top: 60px;
@@ -162,8 +185,8 @@ h1 {
 .card-product {
   color: white;
   background: #141e30; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #243b55, #141e30);
-  background: linear-gradient(to bottom, #243b55, #141e30);
+  background: -webkit-linear-gradient(to right, #f7797d, #fbd786);
+  background: linear-gradient(to right, #f7797d, #fbd786);
   box-shadow: 0px 9px 7px 0px rgba(0, 0, 0, 0.15);
   padding: 30px 20px;
   margin: 0px 30px;

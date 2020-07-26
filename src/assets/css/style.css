@@ -1,0 +1,19 @@
+.footer {
+  margin-top: 80px;
+  padding: 2.5rem 0;
+  color: #fff;
+  text-align: center;
+  background: #f7797d;
+  border-top: 0.05rem solid #e5e5e5;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+.imagen-footer {
+  width: 300px;
+}
+.loggo-footer{
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+    color: white;
+}

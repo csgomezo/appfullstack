@@ -1,9 +1,8 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-ligth px-md-4 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-ligth px-md-4 fixed-top" >
       <router-link to="/Home" class="navbar-brand mb-0 h1">
-        <img src="../assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt />
-        Valencia.app
+        <img src="../assets/logo.png" width="auto" height="30" class="d-inline-block align-top" alt />
       </router-link>
       <button
         class="navbar-toggler"
@@ -31,19 +30,19 @@
         <ul class="nav justify-content-end">
           <li v-if="auth==''" class="nav-item active border border-light rounded" style="margin-right: 5px;">
             <router-link
-              class="btn btn-dark"
+              class="btn btn-outline-primary"
               to="/Singin"
               data-toggle="tooltip"
               data-placement="bottom"
               title="Tooltip on bottom"
             >
-              Sing in
+              Ingresar
               <span class="sr-only">(current)</span>
             </router-link>
           </li>
           <li v-if="auth==''" class="nav-item active border border-light rounded">
-            <router-link class="btn btn-dark" to="/SingUp">
-              Sing up
+            <router-link class="btn" to="/SingUp">
+              Registrar
               <span class="sr-only">(current)</span>
             </router-link>
           </li>
@@ -60,6 +59,7 @@
 import EventBus from "./EventBus";
 
 EventBus.$on("logged-in", test => {
+  console.log("Logedin headerCompo")
   console.log(test);
 });
 
@@ -81,7 +81,7 @@ export default {
     EventBus.$on("logged-in", status => {
       this.auth = status;
     });
-  }
+  },
 };
 </script>
 

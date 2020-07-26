@@ -10,16 +10,22 @@
         <th scope="col">Precio (Unidad)</th>
         <th scope="col">Añadir producto</th>
       </thead>
-      
+
       <tbody>
         <th scope="col">
-          <article v-for="productos in productos" :key="productos.id">{{productos.nombre}}</article>
+          <article v-for="productos in productos" :key="productos.id">
+            {{ productos.nombre }}
+          </article>
         </th>
         <th scope="col">
-          <article v-for="productos in productos" :key="productos.id">{{productos.cantidad}}</article>
+          <article v-for="productos in productos" :key="productos.id">
+            {{ productos.cantidad }}
+          </article>
         </th>
         <th scope="col">
-          <article v-for="productos in productos" :key="productos.id">{{productos.precio}}</article>
+          <article v-for="productos in productos" :key="productos.id">
+            {{ productos.precio }}
+          </article>
         </th>
         <th scope="col">
           <article v-for="productos in productos" :key="productos.id">
@@ -35,33 +41,50 @@
 import Slider from "./Slider";
 import axios from "axios";
 import Global from "../Global";
+import EventBus from "./EventBus";
 //import swal from "sweetalert";
+
+/*Prueba de que llego el evento*/
+EventBus.$on("logged-in", function (test) {
+  console.log("Logedin Productos")
+  this.authProduct=test;
+  console.log(this.authProduct);
+});
+
 export default {
   name: "Productos",
   components: {
-    Slider
+    Slider,
   },
+
+  data() {
+    return {
+      productos: null,
+      url: Global.url,
+      usuario: "",
+      authProduct: "",
+    };
+  },
+
   methods: {
     getProductos() {
       axios
         .get(this.url + "listarProductos")
-        .then(res => {
+        .then((res) => {
           this.productos = res.data.productos;
           console.log(this.productos);
+          console.log(this.authProduct)
         })
-        .catch(err => {
-          console.log(err);
+        .catch((err) => {
+          console.log(err); 
         });
     },
   },
   mounted() {
+    EventBus.$on("logged-in2", function(status) {
+      this.authProduct = status;
+    }.bind(this));
     this.getProductos();
   },
-  data() {
-    return {
-      productos: null,
-      url: Global.url
-    };
-  }
 };
 </script>
